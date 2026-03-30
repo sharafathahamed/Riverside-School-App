@@ -13,6 +13,7 @@ class DepartmentTeachers(NestedSet):
 		else:
 			slug = self.teacher.strip().replace(" ", "-")
 			self.name=f"{self.employee_id}-{slug}"
+			
 	def on_update(self):
 		if not self.is_group and self.teacher and self.parent_department_teachers:
 			frappe.db.set_value(

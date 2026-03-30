@@ -24,6 +24,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "fee_assignment.student",
    "fieldname": "student",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -75,7 +76,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-25 18:06:09.906946",
+ "modified": "2026-03-30 14:10:49.855820",
  "modified_by": "Administrator",
  "module": "Res School",
  "name": "Fee Payment",

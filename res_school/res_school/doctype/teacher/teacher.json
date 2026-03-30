@@ -41,11 +41,13 @@
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Last Name"
   },
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "First Name"
   },
   {
@@ -58,7 +60,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-25 12:00:18.063683",
+ "modified": "2026-03-30 10:22:49.623748",
  "modified_by": "Administrator",
  "module": "Res School",
  "name": "Teacher",

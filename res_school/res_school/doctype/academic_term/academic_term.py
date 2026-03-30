@@ -16,7 +16,7 @@ class AcademicTerm(Document):
 			frappe.throw("Start date must be before end date")
 
 	def validate_year(self):
-		year = frappe.get_doc("Academic Year", self.academic_year)
+		year=frappe.get_doc("Academic Year", self.academic_year)
 		if getdate(self.start_date) < getdate(year.start_date):
 			frappe.throw("Term Start Date cannot be before Academic Year start date")
 		if getdate(self.end_date) > getdate(year.end_date):

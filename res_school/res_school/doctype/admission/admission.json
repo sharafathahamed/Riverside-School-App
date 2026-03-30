@@ -8,11 +8,13 @@
   "section_break_w6n4",
   "student_name",
   "date_of_birth",
+  "age",
   "guardian_name",
   "academic_year",
   "class_section",
   "status",
   "admission_date",
+  "student",
   "amended_from",
   "remarks"
  ],
@@ -71,16 +73,28 @@
    "label": "Admission Date"
   },
   {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "label": "Student",
+   "options": "Student",
+   "read_only": 1
+  },
+  {
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-26 17:47:03.557474",
+ "modified": "2026-03-30 15:58:54.177793",
  "modified_by": "Administrator",
  "module": "Res School",
  "name": "Admission",
