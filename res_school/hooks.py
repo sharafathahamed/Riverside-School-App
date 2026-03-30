@@ -87,7 +87,11 @@ app_license = "mit"
 
 # Uninstallation
 # ------------
-
+scheduler_events = {
+    "daily": [
+        "res_school.tasks.send_low_alert"
+    ]
+}
 # before_uninstall = "res_school.uninstall.before_uninstall"
 # after_uninstall = "res_school.uninstall.after_uninstall"
 

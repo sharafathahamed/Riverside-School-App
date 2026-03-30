@@ -1,0 +1,29 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Total Students Enrolled",
+   "width": "Half"
+  },
+  {
+   "chart": "Total Teachers",
+   "width": "Half"
+  },
+  {
+   "chart": "Fees Collected",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-03-29 21:45:53.697994",
+ "dashboard_name": "Student's Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2026-03-29 21:45:53.697994",
+ "modified_by": "Administrator",
+ "module": "Res School",
+ "name": "Student's Dashboard",
+ "owner": "Administrator"
+}
