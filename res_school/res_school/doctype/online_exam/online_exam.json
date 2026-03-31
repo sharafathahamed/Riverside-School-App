@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-03-30 23:03:24.274447",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "exam_title",
+  "examination",
+  "subject",
+  "class_section",
+  "column_break_1",
+  "academic_term",
+  "allocated_by",
+  "exam_date",
+  "duration_minutes",
+  "section_settings",
+  "total_questions_in_pool",
+  "questions_per_student",
+  "status",
+  "section_questions",
+  "questions_pool",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "ONEXM-.YYYY.-"
+  },
+  {
+   "fieldname": "exam_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Exam Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Subject",
+   "options": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "class_section",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Class Section",
+   "options": "Class Section",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "academic_term",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Academic Term",
+   "options": "Academic Term",
+   "reqd": 1
+  },
+  {
+   "fieldname": "allocated_by",
+   "fieldtype": "Link",
+   "label": "Allocated By",
+   "options": "Teacher",
+   "reqd": 1
+  },
+  {
+   "fieldname": "exam_date",
+   "fieldtype": "Date",
+   "label": "Exam Date",
+   "reqd": 1
+  },
+  {
+   "default": "30",
+   "fieldname": "duration_minutes",
+   "fieldtype": "Int",
+   "label": "Duration (Minutes)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_settings",
+   "fieldtype": "Section Break",
+   "label": "Exam Settings"
+  },
+  {
+   "fieldname": "total_questions_in_pool",
+   "fieldtype": "Int",
+   "label": "Total Questions in Pool",
+   "read_only": 1
+  },
+  {
+   "fieldname": "questions_per_student",
+   "fieldtype": "Int",
+   "label": "Questions Per Student",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPublished\nClosed"
+  },
+  {
+   "fieldname": "section_questions",
+   "fieldtype": "Section Break",
+   "label": "Question Pool"
+  },
+  {
+   "fieldname": "questions_pool",
+   "fieldtype": "Table",
+   "label": "Questions Pool",
+   "options": "Online Exam Question"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Online Exam",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "examination",
+   "fieldtype": "Link",
+   "label": "Examination",
+   "options": "Examination"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-31 13:35:31.857362",
+ "modified_by": "Administrator",
+ "module": "Res School",
+ "name": "Online Exam",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Student"
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
