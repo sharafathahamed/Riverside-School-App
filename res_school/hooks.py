@@ -87,10 +87,24 @@ app_license = "mit"
 
 # Uninstallation
 # ------------
-
+scheduler_events = {
+    "daily": [
+        "res_school.tasks.send_low_alert"
+    ]
+}
 # before_uninstall = "res_school.uninstall.before_uninstall"
 # after_uninstall = "res_school.uninstall.after_uninstall"
-
+doc_events = {
+    "Student Entollment":{
+        "on_update":"res_school.events.update_enroll"
+    },
+    "Attendance":{
+        "before_cancel":"res_school.events.prevent_attendance_cancel"
+    },
+    "Examination Result":{
+        "before_cancel":"res_school.events.prevent_attendance_cancel"
+    }
+}
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps

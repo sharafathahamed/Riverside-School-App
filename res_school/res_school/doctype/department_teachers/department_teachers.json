@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-26 11:37:30.648065",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_kwmf",
+  "department_name",
+  "teacher",
+  "employee_id",
+  "email",
+  "parent_department_teachers",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_kwmf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Department Teachers"
+  },
+  {
+   "fieldname": "parent_department_teachers",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Department Teachers",
+   "options": "Department Teachers"
+  },
+  {
+   "depends_on": "eval: doc.is_group",
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "label": "Department Name"
+  },
+  {
+   "depends_on": "eval: !doc.is_group",
+   "fieldname": "teacher",
+   "fieldtype": "Link",
+   "label": "Teacher",
+   "options": "Teacher"
+  },
+  {
+   "depends_on": "eval: !doc.is_group",
+   "fetch_from": "teacher.employee_id",
+   "fieldname": "employee_id",
+   "fieldtype": "Data",
+   "label": "Employee ID"
+  },
+  {
+   "depends_on": "eval: !doc.is_group",
+   "fetch_from": "teacher.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2026-03-26 12:21:03.744727",
+ "modified_by": "Administrator",
+ "module": "Res School",
+ "name": "Department Teachers",
+ "nsm_parent_field": "parent_department_teachers",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

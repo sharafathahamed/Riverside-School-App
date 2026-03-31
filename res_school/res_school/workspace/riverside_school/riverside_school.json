@@ -1,0 +1,42 @@
+{
+ "charts": [
+  {
+   "chart_name": "Total Teachers",
+   "label": "Total Teachers"
+  },
+  {
+   "chart_name": "Total Students Enrolled",
+   "label": "Total Students Enrolled"
+  },
+  {
+   "chart_name": "Fees Collected",
+   "label": "Fees Collected"
+  }
+ ],
+ "content": "[{\"id\":\"8aQffpC3KK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Riverside School</span>\",\"col\":12}},{\"id\":\"85DSuhlUq7\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Students Enrolled\",\"col\":6}},{\"id\":\"VgWlnBv9dH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Teachers\",\"col\":6}},{\"id\":\"blo_hkw5u9\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fees Collected\",\"col\":12}}]",
+ "creation": "2026-03-30 06:57:58.400230",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "assign",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Riverside School",
+ "links": [],
+ "modified": "2026-03-30 07:02:30.883895",
+ "modified_by": "Administrator",
+ "module": "Res School",
+ "name": "Riverside School",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 28.0,
+ "shortcuts": [],
+ "title": "Riverside School"
+}
