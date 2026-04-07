@@ -23,19 +23,11 @@ class AcademicTerm(Document):
 			frappe.throw("Term End date cannot be after Academic Year end date")
 
 	def overlapping_yrs(self):
-		overlapping = frappe.db.sql("""
-			SELECT name FROM `tabAcademic Term`
-			WHERE academic_year = %(year)s
-			AND name != %(name)s
-			AND (
-				(%(start)s BETWEEN start_date AND end_date)
-				OR (%(end)s BETWEEN start_date AND end_date)
-			)
-		""", {
-			"year": self.academic_year,
-			"name": self.name,
-			"start": self.start_date,
-			"end": self.end_date
-		})
+		overlapping = frappe.db.exists("Academic Term", [
+			["name", "!=", self.name],
+			["academic_year", "=", self.academic_year],
+			["start_date", "<=", self.end_date],
+			["end_date", ">=", self.start_date],
+		])
 		if overlapping:
 			frappe.throw("The dates are overlapping with another term in the same year")

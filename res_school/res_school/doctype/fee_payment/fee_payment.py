@@ -35,10 +35,7 @@ class FeePayment(Document):
 				"Fee Assignment", self.fee_assignment, "student"
 			)
 
-	def after_insert(self):
-		self.update_fee_assignment()
-
-	def on_update(self):
+	def on_submit(self):
 		self.update_fee_assignment()
 
 	def update_fee_assignment(self):
@@ -49,10 +46,10 @@ class FeePayment(Document):
 		})
 		frappe.msgprint("Fee payment recorded. Fee Assignment updated to Paid.")
 
-	def on_trash(self):
+	def on_cancel(self):
 		frappe.db.set_value("Fee Assignment", self.fee_assignment, {
 			"status": "Unpaid",
 			"amount_paid": 0,
 			"payment_date": None
 		})
-		frappe.msgprint("Payment deleted. Fee Assignment reverted to Unpaid.")
+		frappe.msgprint("Payment cancelled. Fee Assignment reverted to Unpaid.")

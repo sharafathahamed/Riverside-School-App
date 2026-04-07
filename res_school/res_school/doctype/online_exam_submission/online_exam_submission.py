@@ -31,9 +31,9 @@ class OnlineExamSubmission(Document):
 		obtained = 0
 		for answer in self.student_answers:
 			total_q += 1
-			real_correct_answer = frappe.db.get_value("Question Bank", answer.question, "correct_answer")
+			realCrt_ans = frappe.db.get_value("Question Bank", answer.question, "correct_answer")
 			
-			if answer.selected_answer and answer.selected_answer == real_correct_answer:
+			if answer.selected_answer and answer.selected_answer == realCrt_ans:
 				answer.is_correct = 1
 				obtained += 1
 			else:

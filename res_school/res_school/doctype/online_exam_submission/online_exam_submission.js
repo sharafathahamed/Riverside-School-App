@@ -24,7 +24,7 @@ function _fetch_and_load_questions(frm) {
             online_exam: frm.doc.online_exam
         },
         freeze: true,
-        freeze_message: __('Fetching and shuffling exam questions...'),
+        freeze_message: ('Fetching and shuffling exam questions...'),
         callback: function (r) {
             if (r.message && r.message.length > 0) {
                 r.message.forEach(function (q) {
@@ -43,15 +43,14 @@ function _fetch_and_load_questions(frm) {
                 frm.set_value("status", "In Progress");
                 frm.set_value("started_on", frappe.datetime.now_datetime());
 
-                // Extremely important native DB commit to avoid asynchronous ghost fields!
                 frm.save();
 
             } else {
-                frappe.msgprint(__("No questions configured for this selected Online Exam document."));
+                frappe.msgprint(("No questions configured for this selected Online Exam document."));
             }
         },
         error: function (r) {
-            frappe.msgprint("Error fetching questions. Please check the backend console or network logs.");
+            frappe.msgprint("Error fetching questions.");
         }
     });
 }

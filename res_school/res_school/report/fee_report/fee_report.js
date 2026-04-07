@@ -5,20 +5,20 @@ frappe.query_reports["Fee Report"] = {
 	"filters": [
 		{
 			"fieldname": "academic_year",
-			"label": __("Academic Year"),
+			"label": "Academic Year",
 			"fieldtype": "Link",
 			"options": "Academic Year",
 			"reqd": 1
 		},
 		{
 			"fieldname": "class_section",
-			"label": __("Class Section"),
+			"label": "Class Section",
 			"fieldtype": "Link",
 			"options": "Class Section"
 		},
 		{
 			"fieldname": "status",
-			"label": __("Status"),
+			"label": "Status",
 			"fieldtype": "Select",
 			"options": "\nUnpaid\nPaid\nWaived"
 		}

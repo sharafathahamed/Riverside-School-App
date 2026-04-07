@@ -12,8 +12,7 @@
   "gender",
   "guardian_name",
   "guardian_email",
-  "admission_date",
-  "user"
+  "admission_date"
  ],
  "fields": [
   {
@@ -50,11 +49,6 @@
    "options": "Email"
   },
   {
-   "fieldname": "user",
-   "fieldtype": "Data",
-   "label": "User"
-  },
-  {
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age"
@@ -63,7 +57,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-30 15:45:47.179673",
+ "modified": "2026-04-07 12:04:27.676311",
  "modified_by": "Administrator",
  "module": "Res School",
  "name": "Student",
