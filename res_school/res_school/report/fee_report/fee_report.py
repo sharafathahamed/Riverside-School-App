@@ -82,15 +82,11 @@ def get_data(filters):
     academic_year = filters.get("academic_year")
     status_filter = filters.get("status")
     class_section = filters.get("class_section")
-
     if not academic_year:
         return []
-
     assignment_filters = {"academic_year": academic_year}
-
     if status_filter:
         assignment_filters["status"] = status_filter
-
     assignments = frappe.get_all(
         "Fee Assignment",
         filters=assignment_filters,
@@ -103,7 +99,6 @@ def get_data(filters):
             "payment_date"
         ]
     )
-
     data = []
 
     for a in assignments:

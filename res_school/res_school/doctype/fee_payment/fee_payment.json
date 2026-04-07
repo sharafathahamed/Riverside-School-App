@@ -1,103 +1,125 @@
 {
- "actions": [],
- "allow_rename": 1,
- "creation": "2026-03-25 17:36:47.536201",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "fee_assignment",
-  "student",
-  "academic_year",
-  "amount_paid",
-  "payment_date",
-  "payment_mode",
-  "receipt_number",
-  "remarks"
- ],
- "fields": [
-  {
-   "fieldname": "fee_assignment",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Fee Assignment",
-   "options": "Fee Assignment",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "fee_assignment.student",
-   "fieldname": "student",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Student",
-   "options": "Student",
-   "reqd": 1
-  },
-  {
-   "fieldname": "academic_year",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Academic Year",
-   "options": "Academic Year",
-   "reqd": 1
-  },
-  {
-   "fieldname": "amount_paid",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Amount Paid",
-   "reqd": 1
-  },
-  {
-   "default": "Today",
-   "fieldname": "payment_date",
-   "fieldtype": "Date",
-   "label": "Payment Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "payment_mode",
-   "fieldtype": "Select",
-   "label": "Payment Mode",
-   "options": "Cash\nBank Transfer\nCheque\nOnline",
-   "reqd": 1
-  },
-  {
-   "fieldname": "receipt_number",
-   "fieldtype": "Data",
-   "label": "Receipt Number",
-   "reqd": 1
-  },
-  {
-   "fieldname": "remarks",
-   "fieldtype": "Text",
-   "label": "Remarks"
-  }
- ],
- "grid_page_length": 50,
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-03-30 14:10:49.855820",
- "modified_by": "Administrator",
- "module": "Res School",
- "name": "Fee Payment",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
- "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2026-03-25 17:36:47.536201",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "fee_assignment",
+        "student",
+        "academic_year",
+        "amount_paid",
+        "payment_date",
+        "payment_mode",
+        "receipt_number",
+        "remarks",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "fee_assignment",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Fee Assignment",
+            "options": "Fee Assignment",
+            "reqd": 1
+        },
+        {
+            "fetch_from": "fee_assignment.student",
+            "fieldname": "student",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Student",
+            "options": "Student",
+            "reqd": 1
+        },
+        {
+            "fieldname": "academic_year",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Academic Year",
+            "options": "Academic Year",
+            "reqd": 1
+        },
+        {
+            "fieldname": "amount_paid",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Amount Paid",
+            "reqd": 1
+        },
+        {
+            "default": "Today",
+            "fieldname": "payment_date",
+            "fieldtype": "Date",
+            "label": "Payment Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "payment_mode",
+            "fieldtype": "Select",
+            "label": "Payment Mode",
+            "options": "Cash\nBank Transfer\nCheque\nOnline",
+            "reqd": 1
+        },
+        {
+            "fieldname": "receipt_number",
+            "fieldtype": "Data",
+            "label": "Receipt Number",
+            "reqd": 1
+        },
+        {
+            "fieldname": "remarks",
+            "fieldtype": "Text",
+            "label": "Remarks"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Fee Payment",
+            "print_hide": 1,
+            "read_only": 1,
+            "search_index": 1
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2026-04-03 12:38:39.757737",
+    "modified_by": "Administrator",
+    "module": "Res School",
+    "name": "Fee Payment",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "submit": 1,
+            "cancel": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "Student",
+            "submit": 1,
+            "write": 1
+        }
+    ],
+    "row_format": "Dynamic",
+    "rows_threshold_for_grid_search": 20,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
 }

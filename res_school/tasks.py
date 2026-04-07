@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.utils import today
+from frappe.utils import today, getdate
 
 def send_low_alert():
 	active_enroll = frappe.get_all(
@@ -80,3 +80,41 @@ def send_alert_email(student, class_section, percentage, present, total):
 		reference_name=student,
 		now=True
 	)
+def fee_overdue_alert():
+		overdue=frappe.get_all(
+			"Fee Assignment",
+			filters={
+				"status":"Unpaid",
+				"due_date":["<",today()]
+			},
+			fields=["name","student","amount_due","due_date","academic_year"]
+		)
+		for fee in overdue:
+			student_doc=frappe.get_doc("Student",fee.student)
+			if not student_doc.guardian_email:
+				continue
+			context={
+				"student_name":student_doc.full_name,
+				"guardian_name": student_doc.guardian_name,
+				"amount_due":fee.amount_due,
+				"due_date":str(fee.due_date),
+				"academic_year":fee.academic_year
+			}
+			subject = f"Fee Overdue — {student_doc.full_name}"
+			message = frappe.render_template(
+				"""Dear {{ guardian_name }},<br><br>
+				This is a reminder that the fee of <b>₹{{ amount_due }}</b>
+				for <b>{{ student_name }}</b> was due on <b>{{ due_date }}</b>
+				and is still unpaid.<br><br>
+				Please clear the dues at the earliest.<br><br>
+				Regards,<br>Riverside Academy""",
+				context
+			)
+			frappe.sendmail(
+				recipients=[student_doc.guardian_email],
+				subject=subject,
+				message=message,
+				reference_doctype="Fee Assignment",
+				reference_name=fee.name,
+				now=True
+			)

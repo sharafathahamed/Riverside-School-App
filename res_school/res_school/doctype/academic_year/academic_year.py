@@ -16,9 +16,10 @@ class AcademicYear(Document):
 
 	def validate_single_active_year(self):
 		if self.is_active:
-			existing = frappe.db.exists("Academic Year", {
-				"is_active": 1,
-				"name": ("!=", self.name)
-			})
-			if existing:
-				frappe.throw(f"Academic Year {existing} is already active.")
+			overlapping = frappe.db.exists("Academic Year", [
+				["name", "!=", self.name],
+				["start_date", "<=", self.end_date],
+				["end_date", ">=", self.start_date],
+			])
+			if overlapping:
+				frappe.throw(f"Date range overlaps with existing Academic Year: {overlapping}.")

@@ -31,6 +31,8 @@ class Student(Document):
 				self.age -= 1
 			
 	def after_insert(self):
+		if not self.guardian_email:
+			return
 		if not frappe.db.exists("User", {"email": self.guardian_email}):
 			user = frappe.get_doc({
 				"doctype": "User",

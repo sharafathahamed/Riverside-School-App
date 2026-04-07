@@ -1,3 +1,4 @@
+from erpnext.hooks import app_include_js
 app_name = "res_school"
 app_title = "Res School"
 app_publisher = "Sharaf"
@@ -27,7 +28,6 @@ app_license = "mit"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/res_school/css/res_school.css"
 # app_include_js = "/assets/res_school/js/res_school.js"
-
 # include js, css files in header of web template
 # web_include_css = "/assets/res_school/css/res_school.css"
 # web_include_js = "/assets/res_school/js/res_school.js"
@@ -89,22 +89,27 @@ app_license = "mit"
 # ------------
 scheduler_events = {
     "daily": [
-        "res_school.tasks.send_low_alert"
+        "res_school.tasks.send_low_alert",
+        "res_school.tasks.send_fee_overdue_alert"
+
     ]
 }
+
 # before_uninstall = "res_school.uninstall.before_uninstall"
 # after_uninstall = "res_school.uninstall.after_uninstall"
 doc_events = {
-    "Student Entollment":{
+    "Student Enrollment":{
         "on_update":"res_school.events.update_enroll"
     },
     "Attendance":{
         "before_cancel":"res_school.events.prevent_attendance_cancel"
     },
     "Examination Result":{
-        "before_cancel":"res_school.events.prevent_attendance_cancel"
+        "before_cancel":"res_school.events.prevent_attendance_cancel",
+        'on_cancel': 'res_school.events.prevent_result_cancel'
     }
 }
+
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
@@ -120,7 +125,6 @@ doc_events = {
 
 # before_app_uninstall = "res_school.utils.before_app_uninstall"
 # after_app_uninstall = "res_school.utils.after_app_uninstall"
-
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config

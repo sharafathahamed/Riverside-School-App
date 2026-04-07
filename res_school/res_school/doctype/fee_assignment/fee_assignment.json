@@ -40,6 +40,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "fee_structure.annual_fee_amount",
    "fieldname": "amount_due",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -73,7 +74,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-30 14:05:36.748049",
+ "modified": "2026-04-03 12:35:29.241087",
  "modified_by": "Administrator",
  "module": "Res School",
  "name": "Fee Assignment",

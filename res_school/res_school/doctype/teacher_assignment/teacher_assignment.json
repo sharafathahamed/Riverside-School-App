@@ -10,7 +10,8 @@
   "class_section",
   "academic_term",
   "assignment_from",
-  "assignment_till"
+  "assignment_till",
+  "status"
  ],
  "fields": [
   {
@@ -46,12 +47,18 @@
    "fieldname": "assignment_till",
    "fieldtype": "Date",
    "label": "Assignment Till"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nCompleted"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-25 11:28:43.806222",
+ "modified": "2026-04-02 16:24:33.932923",
  "modified_by": "Administrator",
  "module": "Res School",
  "name": "Teacher Assignment",

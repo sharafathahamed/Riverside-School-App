@@ -1,6 +1,7 @@
+import frappe
+from frappe.utils import now
 @frappe.whitelist()
 def get_online_exam_for_student(student):
-    # get class section of the student
     enrollment = frappe.db.get_value(
         "Student Enrollment",
         {"student": student, "status": "Active"},
@@ -9,7 +10,6 @@ def get_online_exam_for_student(student):
     if not enrollment:
         frappe.throw("No active enrollment found")
 
-    # get active exams allocated to this student's section
     exams = frappe.get_all(
         "Online Exam",
         filters={
@@ -20,7 +20,6 @@ def get_online_exam_for_student(student):
         fields=["name", "exam_name", "subject", "total_questions"]
     )
 
-    # filter out already submitted exams
     available = []
     for exam in exams:
         already_submitted = frappe.db.exists("Online Exam Submission", {
