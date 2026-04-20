@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:employee_id",
+ "autoname": "field:first_name",
  "creation": "2026-03-24 17:07:21.638148",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -48,7 +48,8 @@
    "fieldname": "first_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "First Name"
+   "label": "First Name",
+   "unique": 1
   },
   {
    "fieldname": "subject",
@@ -60,7 +61,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-30 10:22:49.623748",
+ "modified": "2026-04-07 15:45:19.116960",
  "modified_by": "Administrator",
  "module": "Res School",
  "name": "Teacher",
